@@ -13,6 +13,7 @@ Some concepts:
 
 Usage:  
 Copy files in `sources` folder to your project.  
+If you need some drop-in star image, they are in `star image` folder
 
 to add it on your view:
 
