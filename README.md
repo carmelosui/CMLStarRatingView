@@ -2,7 +2,7 @@ CMLStarRatingView
 =================
 
 <p align="center" >
-  <img src="https://raw.githubusercontent.com/carmelosui/CMLStarRatingView/master/example.png">
+  <img src="https://raw.githubusercontent.com/carmelosui/CMLStarRatingView/master/sample.gif">
 </p>
 
 A rating view, the rating image, the rating level counts are configurable, you can even use different image for every rating level.
