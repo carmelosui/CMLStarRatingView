@@ -12,7 +12,7 @@ Some concepts:
 - `AreaJudger` is the object used to test if user is touching in certain stencil, you can subclass this class and configure to use your subclass when initializing `CMLStarRatingView`, to provider better touch experience.
 
 Usage:  
-Copy all the files to your project.  
+Copy files in `sources` folder to your project.  
 
 to add it on your view:
 
