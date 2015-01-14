@@ -23,4 +23,9 @@
     return NO;
 }
 
+-(NSString *)debugDescription
+{
+    return [NSString stringWithFormat:@"%@: full star %ld, half star %d", [super debugDescription], self.wholeStarCount, self.hasHalfStar];
+}
+
 @end
