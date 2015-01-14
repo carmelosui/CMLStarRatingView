@@ -8,7 +8,7 @@
 @property (nonatomic, strong) NSArray *judgers;
 @property (nonatomic, strong) CMLStarRatingViewRatingChangeCallback valueChangeCallback;
 @property (nonatomic, assign) BOOL reportValueChangeOnTouchEndOnly;
-@property (nonatomic, assign) CMLStarRatingValue *ratingValueWhenTouchBegan;
+@property (nonatomic, strong) CMLStarRatingValue *ratingValueWhenTouchBegan;
 @property (nonatomic, assign) Class hitJudgerClass;
 
 @end
@@ -173,8 +173,6 @@
         return;
     }
     
-    CMLStarRatingValue * const originalValue = self.ratingValue;
-    
     NSInteger judgerHitIndex = [self.judgers indexOfObject:judgerHit];
     CMLStarRatingStencilView *view = [judgerHit relatedStencilView];
     if (self.halfRatingAllowed && [judgerHit isInMyLeftArea:touch]) {
@@ -190,7 +188,7 @@
     [self setRated:NO ForJudgers:rightJudgers];
     
     CMLStarRatingValue *newValue = self.ratingValue;
-    [self reportValueChangeByTouch:touch newValue:newValue oldValue:originalValue];
+    [self reportValueChangeByTouch:touch newValue:newValue oldValue:self.ratingValueWhenTouchBegan];
 }
 
 -(void)reportValueChangeByTouch:(UITouch*)touch newValue:(CMLStarRatingValue*)newValue oldValue:(CMLStarRatingValue*)oldValue
