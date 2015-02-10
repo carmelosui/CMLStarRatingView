@@ -8,6 +8,9 @@
 @property (nonatomic, strong) UIImage *halfRatingImage;
 @property (nonatomic, strong) UIImage *wholeRatingImage;
 
+@property (nonatomic, strong) UIColor *selectedStarTintColor;
+@property (nonatomic, strong) UIColor *unselectedStarTintColor;
+
 @end
 
 @implementation CMLStarRatingStencilView
@@ -41,12 +44,14 @@
     switch (_rating) {
         case CMLStarRatingStencilViewRatingNone:
             toUseImage = self.noneRatingImage;
+            self.stencilImageView.tintColor = self.unselectedStarTintColor;
             break;
         case CMLStarRatingStencilViewRatingHalf:
             toUseImage = self.halfRatingImage;
             break;
         case CMLStarRatingStencilViewRatingWhole:
             toUseImage = self.wholeRatingImage;
+            self.stencilImageView.tintColor = self.selectedStarTintColor;
             break;
             
         default:
@@ -54,6 +59,16 @@
     }
     
     self.stencilImageView.image = toUseImage;
+}
+
+-(void)setSelectedStarTintColor:(UIColor*)color
+{
+    _selectedStarTintColor = color;
+}
+
+-(void)setUnSelectedStarTintColor:(UIColor*)color
+{
+    _unselectedStarTintColor = color;
 }
 
 @end

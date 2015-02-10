@@ -12,5 +12,7 @@ typedef NS_ENUM(NSUInteger, CMLStarRatingStencilViewRating) {
 @property (nonatomic, assign) CMLStarRatingStencilViewRating rating;
 
 -(instancetype)initWithNoneRatingImage:(UIImage*)noneRatingImage halfRatingImage:(UIImage*)halfRatingImage wholeRatingImage:(UIImage*)wholeRatingImage;
+-(void)setSelectedStarTintColor:(UIColor*)color;
+-(void)setUnSelectedStarTintColor:(UIColor*)color;
 
 @end
